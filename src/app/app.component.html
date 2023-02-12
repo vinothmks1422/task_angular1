@@ -1,0 +1,81 @@
+<!-- <h2>Fifth Lgin App</h2> -->
+<form action="" class="container" #myform="ngForm" (ngSubmit)="submitted()">
+  <div class="row heading">
+    <h3>Sign Up</h3>
+    <p>It's quick and easy</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <input class="form-control" type="text" placeholder="First name" #firstname="ngModel" name="firstname" ngModel
+        required>
+      <p style="color: red;" *ngIf="firstname.touched && (firstname.errors?.['required'] || firstname.invalid)">Please
+        Enter Your First Name*</p>
+    </div>
+    <div class=" col-sm-6">
+      <input class="form-control" type="text" placeholder="Surname" #surname="ngModel" name="surname" ngModel
+        required />
+      <p style="color: red;" *ngIf="surname.touched && (surname.errors?.['required'] || surname.invalid)">Please
+        Enter Your Last Name*</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input class="form-control" type="text" placeholder="Mobile number" name="Mobile" #Mobile="ngModel" ngModel
+        required minlength="0" maxlength="10" />
+      <p style="color: red;" *ngIf="Mobile.touched && (Mobile.errors?.['required'] || Mobile.invalid)">Please Enter
+        Your Valid Mobile Number*</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input class="form-control" type="text" placeholder="Email address" name="email" #Email="ngModel" ngModel
+        required />
+      <p style="color: red;" *ngIf="Email.touched && (Email.errors?.['required'] || Email.invalid)">Please Enter
+        Your Valid Email-ID*</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <input class="form-control" type="text" placeholder="New password" name="password" #password="ngModel" ngModel
+        required minlength="6" maxlength="8" />
+      <p style="color: red;" *ngIf="password.touched && (password.errors?.['required'] || password.invalid)">Please Set
+        Your Password*</p>
+    </div>
+  </div>
+  <div class="row">
+    <label for="birth">Date of birth</label>
+    <div class="col-sm-6">
+      <input class="form-control" type="date" #dob="ngModel" name="dob" ngModel required />
+      <p style="color: red;" *ngIf="dob.touched && dob.invalid">Please enter your DOB*</p>
+    </div>
+  </div>
+  <div class="row">
+    <label for="Gender">Gender</label>
+    <div class="col-sm-4 custom-control custom-radio">
+      <input id="male" type="radio" class="custom-control-input" value="male" #male="ngModel" name="gender" ngModel
+        required />
+      <label class="custom-control-label" for="male">Male</label>
+    </div>
+    <div class="col-sm-4 custom-control custom-radio">
+      <input id="male" type="radio" class="custom-control-input" value="female" #female="ngModel" name="gender" ngModel
+        required />
+      <label class="custom-control-label" for="female">Female</label>
+    </div>
+    <div class="col-sm-4 custom-control custom-radio">
+      <input id="male" type="radio" class="custom-control-input" value="transgender" #transgender="ngModel"
+        name="gender" ngModel required />
+      <label class="custom-control-label" for="transgender">Transgender</label>
+    </div>
+    <p style="color: red;" *ngIf="male.touched && male.invalid">Please select gender*</p>
+  </div>
+  <!-- <div class="row">
+    <select class="form-control" type="text" ngModel required>
+      <option *ngFor="let n of number">
+        {{ n.num }}
+      </option>
+    </select>
+  </div> -->
+  <div class="row">
+    <button class="btn btn-success Sign_Up" [disabled]=" myform.invalid">Sign Up</button>
+  </div>
+</form>
