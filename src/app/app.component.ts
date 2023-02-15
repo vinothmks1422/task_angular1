@@ -12,14 +12,15 @@ export class AppComponent {
     window.alert('submitted Successfully')
   }
 
-// number = [
-//   { "num": "1" },
-//   { "num": "2" },
-//   { "num": "3" },
-//   { "num": "4" },
-//   { "num": "5" },
-//   { "num": "6" }
-// ];
+  mobile: number = 0;
+  // number = [
+  //   { "num": "1" },
+  //   { "num": "2" },
+  //   { "num": "3" },
+  //   { "num": "4" },
+  //   { "num": "5" },
+  //   { "num": "6" }
+  // ];
 
 
 }
